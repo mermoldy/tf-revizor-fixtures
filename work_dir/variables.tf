@@ -18,6 +18,6 @@ variable "tags" {
   type = "map"
 }
 variable "pass" {
-  type = "string"
+  type = "map"
   sensitive = true
 }
