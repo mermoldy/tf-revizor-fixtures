@@ -17,3 +17,7 @@ variable "associate_public_ip" {
 variable "tags" {
   type = "map"
 }
+variable "pass" {
+  type = "string"
+  sensitive = true
+}
