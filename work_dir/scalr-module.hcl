@@ -6,12 +6,14 @@ variable "region" {
     cloud = "ec2"
   }
 }
+
 variable "instance_type" {
   policy = "cloud.instance.types"
   conditions = {
     cloud = "ec2"
   }
 }
+
 variable "network" {
   policy = "cloud.networks"
   conditions = {
@@ -19,6 +21,7 @@ variable "network" {
     cloud.location = "${var.region}"
   }
 }
+
 variable "subnet" {
   policy = "cloud.subnets"
   conditions = {
@@ -27,6 +30,7 @@ variable "subnet" {
     cloud.network = "${var.network}"
   }
 }
+
 variable "tags" {
   policy = "cloud.tags"
   conditions = {
