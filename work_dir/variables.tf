@@ -3,6 +3,7 @@ variable "region" {
 }
 variable "instance_type" {
   type = string
+  description = "sdfsdfsdfs"
 }
 variable "network" {
   type = string
