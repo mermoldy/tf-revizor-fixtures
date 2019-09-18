@@ -25,7 +25,6 @@ resource "aws_instance" "test_instance1" {
 output "instance_id" {
  value = aws_instance.test_instance1.id
  sensitive = true
- description = "srftsfrtrtdrt"
 }
 output "public_ip" {
  value = aws_instance.test_instance1.public_ip
