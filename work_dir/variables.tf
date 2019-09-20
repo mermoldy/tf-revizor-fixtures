@@ -12,7 +12,7 @@ variable "subnet" {
 }
 variable "associate_public_ip" {
   type    = bool
-  default = true
+  default = false
 }
 variable "tags" {
   type = "map"
