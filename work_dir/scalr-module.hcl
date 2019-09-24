@@ -35,6 +35,6 @@ variable "tags" {
   policy = "cloud.tags"
   conditions = {
     cloud = "ec2"
-    os.type = "linux"
+    os.type = "linu"
   }
 }
