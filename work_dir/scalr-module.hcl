@@ -38,11 +38,3 @@ variable "tags" {
     os.type = "linu"
   }
 }
-
-variable "tags" {
-  policy = "cloud.tags"
-  conditions = {
-    cloud = "ec2"
-    os.type = "linu"
-  }
-}
