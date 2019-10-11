@@ -1,3 +1,1 @@
-qwerty1
-dgdyrty
-ukifuiukhjkjkl
+Запуск aws/azure/gce сервера с переменными, где есть дефолтные значения
