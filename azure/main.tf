@@ -1,19 +1,26 @@
-resource "azure_resource_group" "main" {
+provider "azurerm" {
+  client_id = "${var.scalr_azurerm_client_id}"
+  client_secret = "${var.scalr_azurerm_secret_key}"
+  environment = "${var.scalr_azurerm_client_id}"
+  subscription_id = "${var.scalr_azurerm_subscription_id}"
+  tenant_id = "${var.scalr_azurerm_tenant_id}"
+}
+resource "azurerm_resource_group" "main" {
   name     = "${var.prefix}-resources"
   location = "East US"
 }
 
-resource "azure_virtual_network" "main" {
+resource "azurerm_network" "main" {
   name                = "${var.prefix}-network"
   address_space       = ["10.0.0.0/16"]
-  location            = azure_resource_group.main.location
-  resource_group_name = azure_resource_group.main.name
+  location            = azurerm_resource_group.main.location
+  resource_group_name = azurerm_resource_group.main.name
 }
 
 resource "azure_subnet" "internal" {
   name                 = "internal"
   resource_group_name  = azurerm_resource_group.main.name
-  virtual_network_name = azurerm_virtual_network.main.name
+  virtual_network_name = azurerm_network.main.name
   address_prefix       = "10.0.2.0/24"
 }
 
@@ -30,7 +37,7 @@ resource "azurerm_network_interface" "main" {
 }
 
 resource "azure_instance" "test_instance" {
-  name                  = "${var.prefix}-vm"
+  name                  = "${var.prefix}-TF-vm"
   location              = azurerm_resource_group.main.location
   resource_group_name   = azurerm_resource_group.main.name
   network_interface_ids = [azurerm_network_interface.main.id]
