@@ -5,6 +5,7 @@ provider "azurerm" {
   subscription_id = "${var.scalr_azurerm_subscription_id}"
   tenant_id = "${var.scalr_azurerm_tenant_id}"
 }
+
 resource "azurerm_resource_group" "main" {
   name     = "${var.prefix}-resources"
   location = "East US"
@@ -25,7 +26,7 @@ resource "azure_subnet" "internal" {
 }
 
 resource "azurerm_network_interface" "main" {
-  name                = "${var.prefix}-nic"
+  name                = "${var.prefix}-network"
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
 
@@ -67,7 +68,5 @@ resource "azure_instance" "test_instance" {
   os_profile_linux_config {
     disable_password_authentication = false
   }
-  tags = {
-    environment = "staging"
-  }
+  tags = "${var.prefix}-TF-vm"
 }
