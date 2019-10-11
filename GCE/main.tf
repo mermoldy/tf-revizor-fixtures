@@ -29,14 +29,6 @@ resource "google_compute_instance" "default" {
   }
 }
 
-resource "google_compute_subnetwork" "default" {
-  name                     = "test-network"
-  ip_cidr_range            = "10.127.0.0/20"
-  network                  = "${google_compute_network.default.self_link}"
-  region                   = "us-central1-a"
-  private_ip_google_access = true
-}
-
 data "google_client_config" "current" {}
 
 data "google_container_engine_versions" "default" {
