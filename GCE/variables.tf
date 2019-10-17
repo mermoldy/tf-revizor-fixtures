@@ -7,5 +7,5 @@ variable "scalr_google_credentials" {
 }
 
 variable "region" {
-   default = "us-east-1"
+   default = "europe-west6"
 }
