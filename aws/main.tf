@@ -20,5 +20,5 @@ resource "aws_instance" "test_instance" {
   instance_type               = var.instance_type
   subnet_id                   = var.subnet
   associate_public_ip_address = var.associate_public_ip
-  tags = merge({ "Name" = format("tf-test -> %s -> %s", data.aws_ami.ubuntu.name, timestamp()) }, var.tags)
+  tags = merge({ "Name" = format("TF-test -> %s -> %s", data.aws_ami.ubuntu.name, timestamp()) }, var.tags)
 }
