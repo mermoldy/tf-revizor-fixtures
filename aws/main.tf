@@ -15,7 +15,7 @@ data "aws_ami" "ubuntu" {
   }
   owners = ["099720109477"]
 }
-resource "aws_instance" "test_instance" {
+resource "aws_instance" "test_instance1" {
   ami                         = data.aws_ami.ubuntu.id
   instance_type               = var.instance_type
   subnet_id                   = var.subnet
