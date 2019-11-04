@@ -30,5 +30,5 @@ output "instance_id" {
 }
 output "public_ip" {
  value = aws_instance.test_instance1.public_ip
- description = "srftsfrtrtdrt"
+ description = "srftsljkklj;lk;"
 }
