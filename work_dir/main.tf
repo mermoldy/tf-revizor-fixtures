@@ -15,14 +15,15 @@ data "aws_ami" "ubuntu" {
   }
   owners = ["099720109477"]
 }
-resource "aws_instance" "test_instance1" {
-  ami                         = data.aws_ami.ubuntu.id
-  instance_type               = var.instance_type
-  subnet_id                   = var.subnet
-  associate_public_ip_address = var.associate_public_ip
-  tags = merge({ "Name" = format("TF-Test-Olga -> %s -> %s", data.aws_ami.ubuntu.name, timestamp()) }, var.tags)
+ resource "aws_instance" "test_instance1" {
+    ami             = "${data.aws_ami.ubuntu.id}"
+    instance_type   = "${var.instance_type}"
+    tags = {
+      Name = "ST-test-instance"
+    timestamp = "${timestamp()}"
+    test-env-owner = "o.stasyuk@scalr.com"
+  }
 }
-output "public_ip" {
- value = aws_instance.test_instance1.public_ip
- description = "srftsfrtrtdrt"
-}
+output "instance_id" {
+ value = aws_instance.test_instance1.id
+ sensitive = true
