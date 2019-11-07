@@ -18,7 +18,7 @@ resource "google_compute_instance" "default" {
   tags = ["foo", "bar"]
 boot_disk {
  initialize_params {
-    image = "Ubuntu 16.04 LTS Minimal"
+    image = "chef-centos7-devel"
    }
   }
  }
