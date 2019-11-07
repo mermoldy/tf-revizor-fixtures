@@ -6,7 +6,7 @@ variable "scalr_google_credentials" {
 
 }
 
-variable "lable"  {
+variable "tags"  {
   type = map(string)  
 }
 
