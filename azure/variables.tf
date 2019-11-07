@@ -9,7 +9,6 @@ variable "scalr_azurerm_environment" {}
 variable "region" {}
 variable "name" {}
 variable "resource_group" {}
-variable "cloud_location" {}  
 variable "instance_type" {}
 variable "network" {}
 variable "subnet_id" {}
