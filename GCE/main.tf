@@ -24,17 +24,17 @@ boot_disk {
  }
 
 resource "google_compute_network" "vpc_network" {
-  name                    = "terraform-network6660"
+  name                    = "terraform-network666"
   auto_create_subnetworks = "true"
 }
 
 resource "google_compute_network" "default" {
-  name                    = "test-network000"
+  name                    = "test-network00"
   auto_create_subnetworks = false
 }
 
 resource "google_compute_subnetwork" "default" {
-  name                     = "test-network700"
+  name                     = "test-network70"
   ip_cidr_range            = "10.127.0.0/20"
   network                  = "${google_compute_network.default.self_link}"
   region                   = "us-central1"
