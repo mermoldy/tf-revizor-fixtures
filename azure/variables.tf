@@ -1,7 +1,19 @@
-variable "prefix" {
-  default = "Scalr-test"
-}
+// secrets binding section
+variable "scalr_azurerm_client_id" {}
+variable "scalr_azurerm_client_secret" {}
+variable "scalr_azurerm_subscription_id" {}
+variable "scalr_azurerm_tenant_id" {}
+variable "scalr_azurerm_environment" {}
 
-variable "vm_size" {
-  default = "Basic_A0"
+// module section
+variable "region" {}
+variable "name" {}
+variable "resource_group" {}
+variable "cloud_location" {}  
+variable "instance_type" {}
+variable "network" {}
+variable "subnet_id" {}
+variable "password" {}
+variable "tags" {
+  type = map(string)  
 }
