@@ -5,7 +5,7 @@ provider "google" {
   }
 
 resource "google_compute_instance" "default" {
-  name         = "TF-test-gce"
+  name         = "tf-test-gce"
   machine_type = "n1-standard-1"
   zone         = "us-east1-b"
    network_interface {
