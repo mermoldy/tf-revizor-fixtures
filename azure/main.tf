@@ -1,4 +1,4 @@
-provider "azurerm" {
+{provider "azurerm" {
   client_id = var.scalr_azurerm_client_id
   client_secret = var.scalr_azurerm_client_secret
   subscription_id = var.scalr_azurerm_subscription_id
@@ -39,6 +39,7 @@ resource "azurerm_virtual_machine" "web" {
     create_option     = "FromImage"
     managed_disk_type = "Standard_LRS"
   }
+  
 
   os_profile {
     admin_username = var.name
@@ -51,4 +52,4 @@ resource "azurerm_virtual_machine" "web" {
   }
 
   tags = var.tags
-}
+}}
