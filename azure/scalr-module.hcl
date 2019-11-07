@@ -1,4 +1,4 @@
-variable "cloud.locations" {
+variable "region" {
   policy = "cloud.locations"
   conditions = {
     cloud = "azure"
