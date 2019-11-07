@@ -14,7 +14,7 @@ resource "google_compute_instance" "default" {
     access_config {
     }
    }
-  labels = var.tags
+  label = var.tags
   tags = ["foo", "bar"]
 boot_disk {
  initialize_params {
