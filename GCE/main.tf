@@ -18,7 +18,7 @@ resource "google_compute_instance" "default" {
   tags = ["foo", "bar"]
 boot_disk {
  initialize_params {
-    image = "gce-uefi-images/windows-1803-core"
+    image = "Ubuntu 16.04 LTS Minimal"
    }
   }
  }
