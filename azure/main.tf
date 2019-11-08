@@ -1,4 +1,4 @@
-{provider "azurerm" {
+provider "azurerm" {
   client_id = var.scalr_azurerm_client_id
   client_secret = var.scalr_azurerm_client_secret
   subscription_id = var.scalr_azurerm_subscription_id
@@ -52,4 +52,4 @@ resource "azurerm_virtual_machine" "web" {
   }
 
   tags = var.tags
-}}
+}
