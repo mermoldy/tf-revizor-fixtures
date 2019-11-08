@@ -6,7 +6,19 @@ provider "azurerm" {
   environment =  var.scalr_azurerm_environment
 }
 
-resource "azurerm_virtual_machine" "web" {
+resource "azurerm_network_interface" "main" {
+  name = var.azure_name
+  location = var.azure_region
+  resource_group_name = var.azure_resource_group
+
+  ip_configuration {
+    name = var.azure_name
+    subnet_id = var.azure_subnet_id
+    private_ip_address_allocation = "Dynamic"
+  }
+}
+
+resource "azurerm_virtual_machine" "tf-test-instanse" {
   location = var.region
   name = var.name
   network_interface_ids = [azurerm_network_interface.main.id]
