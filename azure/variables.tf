@@ -7,7 +7,6 @@ variable "scalr_azurerm_environment" {}
 
 // module section
 variable "region" {}
-variable "name" {}
 variable "resource_group" {}
 variable "instance_type" {}
 variable "network" {}
