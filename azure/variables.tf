@@ -6,6 +6,7 @@ variable "scalr_azurerm_tenant_id" {}
 variable "scalr_azurerm_environment" {}
 
 // module section
+variable "name" {}
 variable "region" {}
 variable "resource_group" {}
 variable "instance_type" {}
