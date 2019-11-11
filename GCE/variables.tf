@@ -11,5 +11,4 @@ variable "tags"  {
 }
 
 variable "region" {
-   default = "europe-west6"
 }
