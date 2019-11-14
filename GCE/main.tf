@@ -1,6 +1,7 @@
 provider "google" {
   credentials = var.scalr_google_credentials
   project     = var.scalr_google_project
+  region =  "us-central1"
   }
 
 resource "google_compute_instance" "default" {
