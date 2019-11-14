@@ -13,8 +13,9 @@ resource "google_compute_instance" "default" {
     access_config {
     }
    }
-  labels = var.tags
-  tags = ["foo", "bar"]
+  labels = {
+    owner = "revizor"  
+   }
 boot_disk {
  initialize_params {
     image = "chef-centos7-devel"
