@@ -6,13 +6,13 @@ provider "azurerm" {
   environment =  var.scalr_azurerm_environment
 }
 resource "azurerm_network_interface" "main" {
-  name = var.azure_name
-  location = var.azure_region
-  resource_group_name = var.azure_resource_group
+  name = var.name
+  location = var.region
+  resource_group_name = var.resource_group
 
   ip_configuration {
-    name = var.azure_name
-    subnet_id = var.azure_subnet_id
+    name = var.name
+    subnet_id = var.subnet_id
     private_ip_address_allocation = "Dynamic"
   }
 }
