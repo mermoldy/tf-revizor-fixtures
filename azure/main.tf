@@ -9,7 +9,8 @@ provider "azurerm" {
 resource "azurerm_virtual_machine" "Tf-test-instanse" {
   location = var.region
   name = var.name
-  network_interface_ids = var.network
+  network = var.network
+  
   resource_group_name = var.resource_group
   vm_size = var.instance_type
   delete_os_disk_on_termination = true
