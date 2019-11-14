@@ -19,7 +19,6 @@ resource "aws_instance" "test_instance1" {
   ami                         = data.aws_ami.ubuntu.id
   instance_type               = var.instance_type
   subnet_id                   = var.subnet
-  name                        = "revizor"
   associate_public_ip_address = var.associate_public_ip
   tags = {
     owner = "revizor"
@@ -27,5 +26,5 @@ resource "aws_instance" "test_instance1" {
 }
 output "public_ip" {
  value = aws_instance.test_instance1.public_ip
- description = "srftsfrtrtdrt"
+ description = "text"
 }
