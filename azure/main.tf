@@ -15,6 +15,9 @@ resource "azurerm_network_interface" "main" {
     subnet_id = var.subnet_id
     private_ip_address_allocation = "Dynamic"
   }
+  tags = {
+    owner = "revizor"  
+  }
 }
 
 
