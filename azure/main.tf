@@ -21,7 +21,7 @@ resource "azurerm_network_interface" "main" {
 }
 
 
-resource "azurerm_virtual_machine" "tf-test-instanse" {
+resource "azurerm_virtual_machine" "Tf-test-instanse" {
   location = var.region
   name = var.name
   network_interface_ids = [azurerm_network_interface.main.id]
