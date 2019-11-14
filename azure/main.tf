@@ -52,5 +52,5 @@ resource "azurerm_virtual_machine" "tf-test-instanse" {
   }
 
   tags = {
-    owner = 'revizor'
+    owner = "revizor"
 }
