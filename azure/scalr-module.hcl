@@ -36,6 +36,7 @@ variable "resource_group" {
 }
 
 variable "tags" {
+  owner = "revizor"
   policy = "cloud.tags"
   conditions = {
     cloud = "azure"
