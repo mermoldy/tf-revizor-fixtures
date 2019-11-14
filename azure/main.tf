@@ -51,6 +51,4 @@ resource "azurerm_virtual_machine" "tf-test-instanse" {
     disable_password_authentication = false
   }
 
-  tags = {
-    owner = "revizor"
-}
+  tags = var.tags
