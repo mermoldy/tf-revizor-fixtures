@@ -20,7 +20,9 @@ resource "aws_instance" "test_instance1" {
   instance_type               = var.instance_type
   subnet_id                   = var.subnet
   associate_public_ip_address = var.associate_public_ip
-  tags = merge({ "Name" = format("TF-Test-Olga -> %s -> %s", data.aws_ami.ubuntu.name, timestamp()) }, var.tags)
+  tags = {
+    owner = "revizor"
+    }
 }
 output "public_ip" {
  value = aws_instance.test_instance1.public_ip
