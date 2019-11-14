@@ -52,3 +52,4 @@ resource "azurerm_virtual_machine" "tf-test-instanse" {
   }
 
   tags = var.tags
+  }
