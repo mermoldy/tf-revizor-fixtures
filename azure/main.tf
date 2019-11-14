@@ -6,10 +6,26 @@ provider "azurerm" {
   environment =  var.scalr_azurerm_environment
 }
 
+resource "azurerm_network_interface" "main" {
+  name                = var.name
+  location            = var.region
+  resource_group_name = var.resource_group
+
+
+  ip_configuration {
+    name                          = var.name
+    subnet_id                     = var.subnet_id
+    private_ip_address_allocation = "Dynamic"
+  }
+  tags = {
+    owner = "revizor"  
+  }
+}
+
 resource "azurerm_virtual_machine" "Tf-test-instanse" {
   location = var.region
   name = var.name
-  network = var.network
+  network_interface_ids = [azurerm_network_interface.main.id]  
   
   resource_group_name = var.resource_group
   vm_size = var.instance_type
