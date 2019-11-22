@@ -6,6 +6,20 @@ provider "azurerm" {
   environment =  var.scalr_azurerm_environment
 }
 
+resource "azurerm_network_interface" "main" {
+  name                = var.name
+  location            = var.region
+  resource_group_name = var.resource_group
+  tags = { 
+    owner = "revizor"
+    }
+ ip_configuration {
+    name                          = var.name
+    subnet_id                     = var.subnet_id
+    private_ip_address_allocation = "Dynamic"
+  }
+}
+
 resource "azurerm_virtual_machine" "Tf-test-instanse" {
   location = var.region
   name = var.name
