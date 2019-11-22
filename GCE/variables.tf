@@ -9,6 +9,3 @@ variable "scalr_google_credentials" {
 variable "tags"  {
   type = map(string)  
 }
-
-variable "region" {
-}
