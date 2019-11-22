@@ -9,8 +9,8 @@ resource "google_compute_instance" "default" {
   machine_type = "n1-standard-1"
   zone         = "us-east1-b"
    network_interface {
-    # A default network is created for all GCP projects
     network       = "terraform-network"
+    subnetwork    = "terraform-subnetwork"
     access_config {
     }
    }
