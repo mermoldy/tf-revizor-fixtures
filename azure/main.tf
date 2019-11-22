@@ -18,6 +18,7 @@ resource "azurerm_network_interface" "main" {
     subnet_id                     = var.subnet_id
     private_ip_address_allocation = "Dynamic"
   }
+}
 
 resource "azurerm_virtual_machine" "tf_azure_test" {
   location = var.region
@@ -54,3 +55,5 @@ resource "azurerm_virtual_machine" "tf_azure_test" {
   tags = { 
     owner = "revizor"
     }
+  
+}
