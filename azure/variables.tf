@@ -13,6 +13,3 @@ variable "instance_type" {}
 variable "network" {}
 variable "subnet_id" {}
 variable "password" {}
-variable "tags" {
-  type = map(string)  
-}
