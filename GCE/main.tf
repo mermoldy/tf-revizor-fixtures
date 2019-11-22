@@ -1,13 +1,12 @@
 provider "google" {
   credentials = var.scalr_google_credentials
   project     = var.scalr_google_project
-  region =  "us-central1"
   }
 
 resource "google_compute_instance" "default" {
   name         = "tf-test-gce"
   machine_type = "n1-standard-1"
-  zone         = "us-east1-b"
+  zone         = "us-central1"
    network_interface {
     network       = "terraform-network"
     subnetwork    = "terraform-subnetwork"
