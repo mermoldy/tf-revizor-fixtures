@@ -14,9 +14,6 @@ variable "associate_public_ip" {
   type    = bool
   default = true
 }
-variable "tags" {
-  type = "map"
-}
 
 variable "scalr_aws_access_key" {
 
