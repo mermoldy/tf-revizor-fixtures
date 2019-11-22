@@ -4,3 +4,7 @@ variable "tags" {
     cloud = "gce"
   }
 }
+
+variable "region" {
+  policy = "cloud.locations"
+  }
