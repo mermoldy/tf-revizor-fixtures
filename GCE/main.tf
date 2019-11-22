@@ -4,14 +4,6 @@ provider "google" {
   region =  "us-central1"
   }
 
-resource "google_compute_network" "default" {
-  name                    = "terraform-network"
-  auto_create_subnetworks = "true"
-   labels = {
-    owner = "revizor"  
-   }
-  }
-
 resource "google_compute_instance" "default" {
   name         = "tf-test-gce"
   machine_type = "n1-standard-1"
