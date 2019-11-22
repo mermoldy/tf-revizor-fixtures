@@ -3,6 +3,19 @@ provider "google" {
   project     = var.scalr_google_project
   }
 
+# Create defaul network subnetwork
+/* resource "google_compute_network" "default" {
+  name                    = "terraform-network"
+  auto_create_subnetworks = false
+}
+resource "google_compute_subnetwork" "default" {
+  name                     = "terraform-subnetwork"
+  ip_cidr_range            = "10.127.0.0/20"
+  network                  = "${google_compute_network.default.self_link}"
+  region                   = "us-central1"
+  private_ip_google_access = true 
+}*/
+  
 resource "google_compute_instance" "default" {
   name         = "tf-test-gce"
   machine_type = "n1-standard-1"
