@@ -20,14 +20,14 @@ resource "azurerm_network_interface" "main" {
   }
 }
 
-resource "azurerm_virtual_machine" "Tf-test-instanse" {
+resource "azurerm_virtual_machine" "tf_azure_test" {
   location = var.region
   name = var.name
-  
+  network_interface_ids = [azurerm_network_interface.main.id]
   resource_group_name = var.resource_group
   vm_size = var.instance_type
   delete_os_disk_on_termination = true
-
+  
   storage_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
@@ -41,7 +41,6 @@ resource "azurerm_virtual_machine" "Tf-test-instanse" {
     create_option     = "FromImage"
     managed_disk_type = "Standard_LRS"
   }
-  
 
   os_profile {
     admin_username = var.name
@@ -53,7 +52,8 @@ resource "azurerm_virtual_machine" "Tf-test-instanse" {
     disable_password_authentication = false
   }
 
-  tags = {
-    owner = "revizor"  
-  }
-  }
+  tags = { 
+    owner = "revizor"
+    }
+  
+}
