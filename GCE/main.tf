@@ -6,7 +6,7 @@ provider "google" {
 resource "google_compute_instance" "default" {
   name         = "tf-test-gce"
   machine_type = "n1-standard-1"
-  region       = "us-central1"
+  zone         = "us-central1-a"
    network_interface {
     network       = "terraform-network"
     subnetwork    = "terraform-subnetwork"
