@@ -30,11 +30,3 @@ variable "subnet" {
     cloud.network = "${var.network}"
   }
 }
-
-variable "tags" {
-  policy = "cloud.tags"
-  conditions = {
-    cloud = "ec2"
-    os.type = "Ubuntu"
-  }
-}
