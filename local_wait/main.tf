@@ -12,7 +12,10 @@ resource "random_integer" "timeout" {
 }
 
 resource "null_resource" "wait" {
+  triggers = {
+    run_id = var.run_id
+  }
   provisioner "local-exec" {
-    command = "sleep ${random_integer.timeout.result}"
+    command = "sleep 30"
   }
 }
