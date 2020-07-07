@@ -1,13 +1,11 @@
 provider "aws" {
   region     = var.region
-  access_key = "${var.scalr_aws_access_key}"
-  secret_key = "${var.scalr_aws_secret_key}"
 }
 data "aws_ami" "ubuntu" {
   most_recent = true
   filter {
     name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-trusty-14.04-amd64-server-*"]
+    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
   }
   filter {
     name   = "virtualization-type"
@@ -21,7 +19,7 @@ resource "aws_instance" "test_instance1" {
   subnet_id                   = var.subnet
   associate_public_ip_address = var.associate_public_ip
   tags = {
-    owner = "revizor"
+    owner = var.owner 
     }
 }
 output "public_ip" {

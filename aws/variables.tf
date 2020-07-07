@@ -15,9 +15,6 @@ variable "associate_public_ip" {
   default = true
 }
 
-variable "scalr_aws_access_key" {
-
-}
-variable "scalr_aws_secret_key" {
-
+variable "owner" {
+  type    = string
 }
