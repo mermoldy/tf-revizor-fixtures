@@ -52,3 +52,4 @@ deny[msg] {
     msg := sprintf("Instance type '%s' is not allowed on cloud '%s'",
                     [r.change.after.machine_type, r.provider_name])
 }
+
